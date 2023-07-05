@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUERYSELECTOR</title>
+    <script>
+        window.onload = function(){
+            var msg = document.querySelector('#temp');
+            // console.log(msg);
+            // msg.childNodes[1].innerHTML=('엥?');
+
+            var test = document.querySelectorAll(".test1");
+            var color = ['orange', 'cyan', 'red'];
+            console.log(test[1]);
+
+            for(var i=0; i<test.length; i++){
+                test[i].style.background = color[i];
+            }
+            // 태그명으로 들고 오기
+            var test = document.querySelectorAll("h3");
+            var color = ['blue', 'green', 'black'];
+            console.log(test[1]);
+
+            for(var i=0; i<test.length; i++){
+                test[i].style.color = color[i];
+            }
+
+            var test = document.querySelectorAll("test2");
+            var color = ['orange', 'red', 'cyan']
+
+            for(var i=0; i<test.length; i++){
+                test[i].style.border = '1px solid ${color[i]}';
+            }
+    }
+    </script>
+</head>
+<body>
+    <div id = "temp>">   
+        <h2 id = "header">점심 이후</h2>
+        </div>
+        <h3 class = "test1">이쪽 모든 내용을 들고 갈게요1</h3>
+        <h3 class = "test1">이쪽 모든 내용을 들고 갈게요2</h3>
+        <h3 class = "test1">이쪽 모든 내용을 들고 갈게요3</h3>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            //노드 생성
+            var title = document.createElement('h2');
+            title.setAttribute('class', 'titleNode');
+            var msg = document.createTextNode("Hello, world");
+
+            console.log(title);
+            console.log(msg);
+
+            // Text node를 elementnode에 추가
+            title.appendChild(msg);
+            document.body.appendChild(title);
+
+            var profile = document.createElement('img');
+            profile.src = "../img/night.png";
+            profile.width = 200;
+            profile.height = 200;
+            document.body.appendChild(profile);
+
+            // innerHTML은 기존의 트리의 node들을 다 덮어쓴다
+            // document.body.innerHTML = "<h3>곧 점심시간이다!</h3>";
+            // text 그대로 나오도록 표현하고 싶다면
+            document.body.innerText = "<h3>곧 점심시간이다!</h3>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "div1">누르시오</div>
+    <!-- <div onclick = "msg1(); msg2()">누르시오</div> -->
+    <script>
+        var msg1 = function(){
+            alert('헤이');
+        }
+
+        var msg2 = function(){
+            var temp = document.querySelector('div');
+            temp.style.background = 'aqua';
+        }
+
+        document.getElementById("div1").onclick = function(){
+            alert('?');
+        }
+    </script>
+</body>
+</html>
