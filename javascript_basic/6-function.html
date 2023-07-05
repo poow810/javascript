@@ -7,8 +7,8 @@
 
     <script>
         //var sum;
-        //sum(10, 25) 여기서는 함수가 아님 defined 상태이기 때문.
-        minus(10, 25)
+        //sum(10, 25) 함수 호이스팅은 발생 x 이전 순서에서 실행 불가 
+        minus(10, 25) // 변수는 호이스팅이 일어나서 이전 순서에서도 실행 가능
         var sum = function(num1, num2){
             console.log(num1+ num2);
         }

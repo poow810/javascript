@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="javascript:setOpenerData('value1');">선택1</a>
+    <a href="javascript:setOpenerData('value2');">선택2</a>
+    <button onclick="javascript:reloadOpener();">새로고침</button>
+
+    <script>
+        // 부모 창에 값 전달 후, 닫기
+        function setOpenerData(data){
+            window.opener.setData(data);
+            window.close();
+        }
+        // 부모 창 새로고침 후, 닫기
+        function reloadOpener(){
+            opener.location.reload();
+            self.close();
+        }
+    </script>
+</body>
+</html>

@@ -9,13 +9,21 @@
 </head>
 <body>
     <button onclick="javascript:windowOpen();">버튼 눌러서 창열기</button>
-    <a href="">링크 창 열기</a>
+    <a href="javascript:windowOpen2();">링크 창 열기</a>
+    <div id="view"></div>
 
     <script>
+        // 창 열고 닫기
         function windowOpen(){
             window.open("./3-1 windowOpenR.html", "newWindow", "width=300, height=300, top=100, left=100" , true);
+        }
+        // 연 창에 입력된 데이터 가지고 오기
+        function windowOpen2(){
+            window.open("./3-2 windowOpener.html", "newWin")
+        }
 
-
+        function setData(data){
+            document.getElementById("view").innerHTML = data;
         }
     </script>
 </body>
