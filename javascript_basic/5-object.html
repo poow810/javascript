@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var student = {
+            name : "박하운",
+            area : "인천",
+            classNum : 0,
+        }
+
+        var student2 = {};
+        student2.name = "하하하";
+        var object = new Object();
+
+        console.log(typeof object);
+
+        object.name = "홍길동";
+        object.age = 20;
+        object.area = "한양";
+
+        console.log(object.name + "은 현재 " + object.age + "살 이고요...");
+        console.log(`${object.name}은 현재 ${object.age}살 이구요. ${object.area}에 살아요.`);
+
+        function Student(name, area, classNum){
+            this.name = name;
+            this.area = area;
+            this.classNum = classNum;
+        }
+
+        var student1 = new Student("홍길동", "한양", 1);
+        console.log(student1);
+
+        var student2 = new Student("하하하", "서울", 2);
+        console.log(student2);
+        
+        var x = student2;
+        console.log(x);
+
+        console.log(student2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

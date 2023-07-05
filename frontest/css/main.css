@@ -1,0 +1,180 @@
+/* 전체 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+    font-weight: bold;
+}
+
+/* 상단 Header */
+.header {
+    height: 70px;
+    box-shadow: 0px 1px 10px rgba(1, 1, 5, 1);
+}
+
+.nav {
+    position: relative;
+    max-width: 1200px;
+    height: 70px;
+    width: calc(100%-100px);
+    margin: auto;
+}
+
+.menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.menu > li {
+    float: left;
+    margin-right: 10px;
+}
+
+.menu-item {
+    color: purple;
+
+}
+
+.menu-item:hover{
+    color : blue;
+}
+
+#logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: blue;
+    margin-left: 10px;
+    line-height: 70px;
+    height: 70px;
+}
+
+/* 중앙 Content */
+
+.content {
+    margin: 10px auto;
+    max-width: 1200px;
+}
+
+/* 중앙 Left */
+.content-left {
+    width: 25%;
+    float: left;
+}
+
+.content-left-profile {
+    margin: 5px;
+    height: 180px;
+    text-align: center;
+}
+
+.content-left-profile > img {
+    margin: 5px;
+    height: 170px;    
+}
+
+.content-left-poll-btn {
+    text-align: center;
+    margin: 5px auto;
+}
+
+#btn-makepoll {
+    width: 150px;
+    display: none;
+}
+
+.content-left-poll {
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    padding: 10px;
+    color: gray;
+    font-size: 15px;
+}
+
+.poll-title {
+    color: steelblue;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.poll-question {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.poll-answer {
+    margin: 5px;
+}
+
+.poll-answer > ul > li {
+    margin-bottom: 5px;
+}
+
+.poll-btn {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.button {
+    border : 1px solid black;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.btn-primary {
+    background-color: red;
+    color: aliceblue;
+}
+
+
+
+/* 중앙 Main */
+.content-section {
+    width: 75%;
+    float: right;
+}
+
+.poll-date {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.content-section-article {
+    border: 1px solid red;
+    margin: 10px;
+    height: 150px; 
+    max-width: 900px;
+    padding: 5px;
+}
+
+/* 하단 Footer */
+
+.footer {
+    border: 1px solid skyblue;
+    clear: both;
+    max-width: 1200px;
+    height: 70px;
+    margin: auto;
+}
+
+.footer > ul {
+    float: right;
+}
+
+.footer > ul > li {
+    display: inline-block;
+    margin-right: 5px;
+    line-height: 100px;
+}
