@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <div id="result"></div>
+    <script>
+        //localStorage 데이터 추가 방법 3가지
+        function init() {
+            localStorage.Test = 'sample1';
+            localStorage["TEST2"] = 'sample2';
+            localStorage.setItem('TEST3', "sample3");
+
+            //localStorage 데이터 취득 방법 3가지
+            let data1 = localStorage.Test;
+            data1 = localStorage["TEST2"];
+            data1 = localStorage.getItem('TEST3');
+
+            document.querySelector('#result').innerHTML = data1;
+
+            //localStorage 데이터 삭제
+            localStorage.removeItem("Test");
+            
+        }
+    </script>
+</body>
+</html>

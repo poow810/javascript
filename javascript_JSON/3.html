@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <div id="test"></div>
+    <script>
+        function init() {
+            let user = {
+                name : "홍길동",
+                area : "한양",
+                age : 20
+            }
+            let temp = JSON.stringify(user);
+            localStorage.setItem("user", temp);
+        }
+
+        let userInfo = localStorage.getItem("user");
+        userInfo= JSON.parse(userInfo);
+        let temp = document.querySelector("#aaa");
+        temp.innerHTML = userInfo.name;
+    </script>
+</body>
+</html>

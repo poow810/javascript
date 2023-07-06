@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let test = '{"squadName": "Super hero squad", "homeTown": "Metro City", "formed": 2016, "secretBase": "Super tower", "active": true}';
+      console.log(test);
+      let temp = JSON.parse(test);
+      console.log(temp);
+
+      let user = {
+        name : "홍길동",
+        area : "한양",
+        age : 20
+      }
+      let userJson = JSON.stringify(user);
+      console.log(userJson);
+    </script>
+</body>
+</html>
