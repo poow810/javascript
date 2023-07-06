@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응답하는 JSON 읽어오기</title>
+    <h3>학생 정보</h3>
+    <table>
+        <tr>
+            <th>학번</th>
+            <th>이름</th>
+            <th>반</th>
+            <th>점수</th>
+        </tr>
+        <tbody id ="infoList">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</head>
+<body>
+    <script>
+        fetch("./files/4-03.json")
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+            makeList(data);
+        })
+    
+        function makeList(data){
+            // 1줄씩 나뉜 데이터에서 다시 ,기준으로 나눠 배열 할당
+            let total ='';
+            data.forEach(student => {
+                let oneRow = `<tr><td>${student.id}</td></tr>`
+                oneRow+= `<td>${student.name}</td>`
+                oneRow+= `<td>${student.class}</td>`
+                oneRow+= `<td>${student.grade}</tr>`
+                // console.log(infos);
+                // infos.forEach(function(info, i) {
+                //     oneRow+=`<td>${info}</td>`
+                // });
+
+                total+= oneRow;
+                document.getElementById("infoList").innerHTML = total; 
+            });
+        }
+    </script>
+</body>
+</html>

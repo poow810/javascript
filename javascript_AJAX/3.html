@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml</title>
+    <h3>학생 정보</h3>
+    <table>
+        <tr>
+            <th>학번</th>
+            <th>이름</th>
+            <th>반</th>
+            <th>점수</th>
+        </tr>
+        <tbody id ="infoList">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</head>
+<body>
+    <script>
+        fetch("./files/4-02.xml")
+        .then((res) => res.text())
+        .then((text) => {
+            console.log(text);
+            makeList(text);
+        })
+    
+        function makeList(data){
+            // 문자열 XML 데이터를 XML로 만들 파서 필요
+            let parser = new DOMParser();
+            let xml = parser.parseFromString(data, "application/xml");
+            console.log(xml); //dom 형태로 파싱 됐는지 확인
+
+            // XML DOM에서 student 태그 데이터 모두 가져오기
+            let students = xml.querySelectorAll("student");
+            console.log(students);
+            // 1줄씩 나뉜 데이터에서 다시 ,기준으로 나눠 배열 할당
+            let total ='';
+            students.forEach(student => {
+                let oneRow = `<tr><td>${student.querySelector("id").textContent}</td></tr>`
+                oneRow+= `<td>${student.querySelector("name").textContent}</td>`
+                oneRow+= `<td>${student.querySelector("class").textContent}</td>`
+                oneRow+= `<td>${student.querySelector("grade").textContent}</tr>`
+                // console.log(infos);
+                // infos.forEach(function(info, i) {
+                //     oneRow+=`<td>${info}</td>`
+                // });
+
+                total+= oneRow;
+                document.getElementById("infoList").innerHTML = total; 
+            });
+        }
+    </script>
+</body>
+</html>

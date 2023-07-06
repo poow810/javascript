@@ -33,10 +33,10 @@
           <img src="./img/profile.png" alt="" />
         </div>
         <div class="content-left-poll-btn">
-          <button id="btn-makepoll">투표만들기</button>
+          <button id="btn-makepoll">투표 만들기</button>
         </div>
         <div class="content-left-poll">
-          <div class="poll-title">[당신의 선택]</div>
+         <!-- <div class="poll-title">[당신의 선택]</div>
           <div class="poll-question">BOOTCAMP에서의 지역?</div>
           <div class="poll-answer">
             <ul>
@@ -50,7 +50,7 @@
             <button class="button btn-primary">투표하기</button>
             <button class="button">이전결과보기</button>
           </div>
-          <div class="poll-date">투표기간 : 2023.07.03 ~ 2025.12.31</div>
+          <div class="poll-date">투표기간 : 2023.07.03 ~ 2025.12.31</div> -->
         </div>
       </div>
       <!-- 중앙 Left content end -->
@@ -75,5 +75,46 @@
       </ul>
     </div>
     <!-- 하단 Footer content end -->
+    <script>
+      //투표 만들기 창 띄우기
+      window.onload = function() {
+        document.getElementById("btn-makepoll").onclick = function(){
+          //투표 만들기 창 open
+          window.open("makepoll.html", "poll", "width = 300, height = 200, top = 50%, left = 50%");
+        }
+        // 투표 정보가 있는지 확인(question, answers)
+        var question = localStorage.getItem("question");
+        if(question){
+          var makePollBtn = document.getElementById("btn-makepoll");
+          makePollBtn.style.display = "none";
+          var answers = localStorage.getItem("answers");
+          var answerArr = JSON.parse(answers);
+        
+
+        let poll = `<!-- <div class="poll-title">[당신의 선택]</div>
+          <div class="poll-question">${question}</div>
+          <div class="poll-answer">
+            <ul>`;
+              for(var i=0; i<answerArr.length; i++){
+                poll += `<li><input type="radio" name="poll-answer" id="" />${answerArr[i]}</li>`
+              }
+            `</ul>
+          </div>
+          <div class="poll-btn">
+            <button class="button btn-primary">투표하기</button>
+            <button class="button">이전결과보기</button>
+          </div>
+          <div class="poll-date">투표기간 : 2023.07.03 ~ 2025.12.31</div> -->`
+        var pollDiv = document.querySelector(".content-left-poll");
+        pollDiv.innerHTML = poll;
+        }else{
+          document.getElementById("btn-makepoll").style.display = "";
+
+          var content = document.querySelector(".content-left-poll");
+          content
+
+        }
+      }
+    </script>
   </body>
 </html>

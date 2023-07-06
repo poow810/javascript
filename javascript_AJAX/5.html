@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=HMakSFD5Cl/ciwjtR6S9XK3l87TOXyKpu/0c4zzVoLh2JPhqDWm7ADbi9GuvIDgzl6RUxTL2r9Q2GO0medFLRg==&pageNo=1&numOfRows=1000&dataType=XML&base_date=20230706&base_time=0600&nx=55&ny=127";
+        fetch(url).then(res=>res.text())
+        .then(data=>console.log(data));
+    </script>
+</body>
+</html>
